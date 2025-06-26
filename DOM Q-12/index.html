@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Manipulation</title>
+</head>
+<body>
+  <ul id="item-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <button id="add-btn">Add Item</button>
+
+
+</body>
+</html>
+<script>
+    const ul = document.querySelector("#item-list");
+    const button=document.querySelector("#add-btn")
+
+    button.addEventListener('click',()=>{
+        const newli=document.createElement('li')
+        const count=ul.children.length+1
+        newli.textContent='Item '+count;
+
+        if(count%2==0){
+           newli.style.fontStyle='italic';
+           newli.style.color='red'
+        }else{
+            newli.style.fontWeight='bold'
+            newli.style.color='blue'
+        }
+        ul.appendChild(newli)
+    })
+
+   
+</script>
