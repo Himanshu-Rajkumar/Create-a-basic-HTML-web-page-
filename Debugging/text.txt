@@ -1,0 +1,76 @@
+ Debugging HTML & CSS using Inline, Internal, and External Styles
+ Problem Statement
+We were provided with an HTML file using three different types of CSS:
+
+Inline CSS
+
+Internal CSS
+
+External CSS
+
+However, the original file had several errors in CSS syntax and style application. The goal was to debug and apply the correct styles so that all three CSS methods work as expected.
+
+Fixes & Explanation
+ 1. Internal CSS Fixes
+Issue:
+Invalid background-color value:
+
+css
+Copy
+Edit
+background-color: #f0f0;
+Fix:
+Updated to a valid 6-digit hex:
+
+css
+Copy
+Edit
+background-color: #f0f0f0;
+Reason:
+The value #f0f0 is not a valid 3-digit or 6-digit hex color. The correct version is #f0f0f0.
+
+ 2. Inline CSS Fixes
+Issue:
+Inline style had invalid hex code:
+
+html
+Copy
+Edit
+<p style="font-size: 16px; color: #3333;">
+Fix:
+Corrected to:
+
+html
+Copy
+Edit
+<p style="font-size: 16px; color: #333;">
+Reason:
+#3333 is not a valid hex color. Valid shorthand is #333.
+
+ 3. External CSS Fixes
+Issue:
+The styles.css file was not created or referenced correctly.
+
+Fix:
+
+Created styles.css
+
+Added this CSS:
+
+css
+Copy
+Edit
+#main-container {
+  background-color: lightgray;
+  padding: 10px;
+  border: 1px solid black;
+}
+Linked it in the HTML:
+
+html
+Copy
+Edit
+<link rel="stylesheet" href="styles.css">
+Reason:
+To ensure the <div id="main-container"> applies external styles properly as required.
+
