@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <!-- Input field for color -->
+   <label for="">Enter Color :</label>
+   <input id="color" type="text"><br>
+
+   <!-- Input field for text -->
+   <label for="">Enter Text :</label>
+   <input id="text" type="text"><br>
+
+   <!-- Button to change background color of firstDiv -->
+   <label for="">Change Color:</label>
+   <button id="colorChange" onclick="changeColor()">Button</button><br>
+
+   <!-- Div whose background color will change -->
+   <div id="firstDiv">First Div</div>
+
+   <!-- Button to change text of secondDiv -->
+   <label for="">Update Text:</label>
+   <button onclick="changeText()" id="textChange">Button</button>
+
+   <!-- Div whose text content will be updated -->
+   <div id="secondDiv">Second Div</div>
+
+</body>
+</html>
+
+<script>
+   // Select the firstDiv element
+   const firstDiv = document.getElementById('firstDiv');
+
+   // Select the secondDiv element
+   const secondDiv = document.getElementById('secondDiv');
+
+   // Function to change the background color of firstDiv
+   function changeColor() {
+       // Get value from the color input field
+       const firstInput = document.getElementById('color').value;
+       // Set the background color of firstDiv to the input value
+       firstDiv.style.backgroundColor = firstInput;
+   }
+
+   // Function to change the text content of secondDiv
+   function changeText() {
+       // Get value from the text input field
+       const secondInput = document.getElementById('text').value;
+       // Set the text content of secondDiv to the input value
+       secondDiv.textContent = secondInput;
+   }
+</script>
