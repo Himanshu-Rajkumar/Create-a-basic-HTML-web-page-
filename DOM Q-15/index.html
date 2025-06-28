@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+</head>
+<body>
+
+  <!-- Task input and Add button -->
+  <input type="text" name="task" id="taskInput">
+  <button>Add Task</button>
+
+  <!-- Task list container -->
+  <ul id="taskList"></ul>
+
+  <script>
+    const btn = document.querySelector('button');
+    const input = document.querySelector('#taskInput');
+    const taskList = document.querySelector('#taskList');
+
+    btn.addEventListener('click', () => {
+      const task = input.value.trim(); // Remove whitespace
+
+      // Do not add empty tasks
+      if (task === "") {
+        alert("Please enter a task!");
+        return;
+      }
+
+      // Create a new <li> element for the task
+      const newTask = document.createElement('li');
+      newTask.textContent = task;
+
+      // Create "Delete" button
+      const delBtn = document.createElement('button');
+      delBtn.textContent = "Delete";
+      delBtn.addEventListener('click', () => {
+        newTask.remove(); // Remove the <li>
+      });
+
+      // Create "Complete" button
+      const completeBtn = document.createElement('button');
+      completeBtn.textContent = "Complete";
+      completeBtn.addEventListener('click', () => {
+        newTask.style.textDecoration = "line-through"; // Strike the text
+      });
+
+      // Add buttons to the <li>
+      newTask.appendChild(completeBtn);
+      newTask.appendChild(delBtn);
+
+      // Add the <li> to the <ul>
+      taskList.appendChild(newTask);
+
+      // Clear input field
+      input.value = "";
+    });
+  </script>
+
+</body>
+</html>
